@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nebula // Kalkulator Angkasa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <main class="cosmos">
+
+    <header class="masthead">
+      <span class="masthead__mark">✦</span>
+      <div class="masthead__text">
+        <h1>NEBULA</h1>
+        <p>kalkulator angkasa &amp; konstanta semesta</p>
+      </div>
+    </header>
+
+    <section class="calculator" aria-label="Kalkulator">
+
+      <!-- orbit ring of math constants behind the display -->
+      <div class="orbit" aria-hidden="true">
+        <div class="orbit__ring orbit__ring--1"><span class="orbit__body">π</span></div>
+        <div class="orbit__ring orbit__ring--2"><span class="orbit__body">e</span></div>
+        <div class="orbit__ring orbit__ring--3"><span class="orbit__body">∞</span></div>
+        <div class="orbit__ring orbit__ring--4"><span class="orbit__body">φ</span></div>
+      </div>
+
+      <div class="display">
+        <div class="display__trail" id="expression">&nbsp;</div>
+        <div class="display__main" id="result">0</div>
+        <div class="display__mode" id="mode">DEG</div>
+      </div>
+
+      <div class="keys">
+
+        <div class="keys__row keys__row--sci">
+          <button class="key key--sci" data-action="clear">AC</button>
+          <button class="key key--sci" data-action="backspace">⌫</button>
+          <button class="key key--sci" data-action="func" data-value="(">(</button>
+          <button class="key key--sci" data-action="func" data-value=")">)</button>
+          <button class="key key--sci" data-action="mode">DEG</button>
+        </div>
+
+        <div class="keys__row keys__row--sci">
+          <button class="key key--sci" data-action="func" data-value="sin(">sin</button>
+          <button class="key key--sci" data-action="func" data-value="cos(">cos</button>
+          <button class="key key--sci" data-action="func" data-value="tan(">tan</button>
+          <button class="key key--sci" data-action="func" data-value="log(">log</button>
+          <button class="key key--sci" data-action="func" data-value="ln(">ln</button>
+        </div>
+
+        <div class="keys__row keys__row--sci">
+          <button class="key key--sci" data-action="func" data-value="sqrt(">√</button>
+          <button class="key key--sci" data-action="operator" data-value="^">xʸ</button>
+          <button class="key key--sci" data-action="func" data-value="fact">x!</button>
+          <button class="key key--sci" data-action="const" data-value="pi">π</button>
+          <button class="key key--sci" data-action="const" data-value="e">e</button>
+        </div>
+
+        <div class="keys__row keys__row--main">
+          <button class="key key--num" data-action="num" data-value="7">7</button>
+          <button class="key key--num" data-action="num" data-value="8">8</button>
+          <button class="key key--num" data-action="num" data-value="9">9</button>
+          <button class="key key--op" data-action="operator" data-value="/">÷</button>
+        </div>
+
+        <div class="keys__row keys__row--main">
+          <button class="key key--num" data-action="num" data-value="4">4</button>
+          <button class="key key--num" data-action="num" data-value="5">5</button>
+          <button class="key key--num" data-action="num" data-value="6">6</button>
+          <button class="key key--op" data-action="operator" data-value="*">×</button>
+        </div>
+
+        <div class="keys__row keys__row--main">
+          <button class="key key--num" data-action="num" data-value="1">1</button>
+          <button class="key key--num" data-action="num" data-value="2">2</button>
+          <button class="key key--num" data-action="num" data-value="3">3</button>
+          <button class="key key--op" data-action="operator" data-value="-">−</button>
+        </div>
+
+        <div class="keys__row keys__row--main">
+          <button class="key key--num" data-action="num" data-value="0">0</button>
+          <button class="key key--num" data-action="num" data-value=".">.</button>
+          <button class="key key--eq" data-action="equals">=</button>
+          <button class="key key--op" data-action="operator" data-value="+">+</button>
+        </div>
+
+      </div>
+
+      <p class="footnote" id="footnote">siap menghitung semesta</p>
+    </section>
+
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
